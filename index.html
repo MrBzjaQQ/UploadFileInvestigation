@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <form name="upload">
+            <input type="file" name="myfile">
+            <input type="submit" value="Загрузить">
+            <input type="button" value="Stop" onclick="stop()">
+        </form>
+        <div id="myProgress">
+          <div id="myBar">10%</div>
+        </div>
+          
+          <script>
+            document.forms.upload.onsubmit = function() {
+              var input = this.elements.myfile;
+              var file = input.files[0];
+              if (file) {
+                upload(file);
+              }
+              return false;
+            }
+          </script>
+          <script src="upload.js"></script>
+    </body>
+</html>
