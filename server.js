@@ -9,7 +9,7 @@ var file = new static.Server('.', {
 
 function accept(req, res) {
 
-  if (req.url == '/upload') {
+  if (req.url == '127.0.0.1:5000/upload') {
     var length = 0;
     req.on('data', function(chunk) {
       // ничего не делаем с приходящими данными, просто считываем
@@ -32,7 +32,7 @@ function accept(req, res) {
 // ------ запустить сервер -------
 
 if (!module.parent) {
-  http.createServer(accept).listen(8080);
+  http.createServer(accept).listen(5000);
 } else {
   exports.accept = accept;
 }
